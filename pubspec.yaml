@@ -1,6 +1,6 @@
 name: to_png
 description: A transformer to optimize png images.
-version: 0.0.1-pre.0
+version: 0.0.1-pre.1
 repository: https://github.com/hadysata/to_png/
 homepage: https://github.com/hadysata/to_png/
 
@@ -10,6 +10,7 @@ environment:
 dependencies:
   args: ^2.4.2
   image: ^4.1.7
+  pdfium_bindings: ^2.0.1
 
 dev_dependencies:
   lints: ^4.0.0
