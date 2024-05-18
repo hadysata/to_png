@@ -1,4 +1,8 @@
-## 0.0.1-pre.2
+## 0.0.1-pre.4
+
+- Fix PDFium on Windows
+
+## 0.0.1-pre.3
 
 - Fix PDFium package path
 

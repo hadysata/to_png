@@ -85,7 +85,7 @@ static Future<String> get libraryPath async {
     final basePath = packageUri.toFilePath();
 
     if (Platform.isWindows) {
-      return path.join(basePath, 'pdfium.dll.lib');
+      return path.join(basePath, 'pdfium.dll');
     } else if (Platform.isLinux) {
       return path.join(basePath, 'libpdfium.so');
     } else if (Platform.isMacOS) {
