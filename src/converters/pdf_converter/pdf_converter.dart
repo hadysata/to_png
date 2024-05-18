@@ -8,7 +8,7 @@ import 'package:pdfium_bindings/pdfium_bindings.dart';
 
 class PdfConverter {
   static void convert(
-      {required String inputFilePath, required String outputFilePath}) async {
+      {required String inputFilePath, required String outputFilePath, required int scale}) async {
     final dylib = DynamicLibrary.open(libraryPath);
     final pdfium = PDFiumBindings(dylib);
 
@@ -36,7 +36,6 @@ class PdfConverter {
       throw PageException(message: err);
     }
 
-    const scale = 1;
     final width = (pdfium.FPDF_GetPageWidth(page) * scale).round();
     final height = (pdfium.FPDF_GetPageHeight(page) * scale).round();
 

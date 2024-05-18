@@ -1,4 +1,4 @@
 {
   "dart.flutterSdkPath": ".fvm/versions/master",
-  "cSpell.words": ["magick", "Pdfium", "pdfw"]
+  "cSpell.words": ["FPDF", "magick", "Pdfium", "pdfw", "svgexport"]
 }

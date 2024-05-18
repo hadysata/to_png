@@ -6,16 +6,16 @@ import 'utils/args_parser.dart';
 
 int run(List<String> arguments) {
   try {
-    final (String inputFilePath, String outputFilePath) = ArgsParser.parse(arguments);
+    final (String inputFilePath, String outputFilePath, int scale) = ArgsParser.parse(arguments);
 
     final inputFileExtension = inputFilePath.split(".").last.toLowerCase();
 
     if (inputFileExtension == "pdf") {
-      PdfConverter.convert(inputFilePath: inputFilePath, outputFilePath: outputFilePath);
+      PdfConverter.convert(inputFilePath: inputFilePath, outputFilePath: outputFilePath, scale: scale);
     } else if (inputFileExtension == "svg") {
-      SvgConverter.convert(inputFilePath: inputFilePath, outputFilePath: outputFilePath);
+      SvgConverter.convert(inputFilePath: inputFilePath, outputFilePath: outputFilePath, scale: scale);
     } else {
-      stderr.writeln('Input file is not yet supported');
+      throw Exception('Input file is not yet supported');
     }
 
     return 0;

@@ -1,3 +1,7 @@
+## 0.0.1-pre.2
+
+- Support scale options
+
 ## 0.0.1-pre.1
 
 - Support PDF & SVG
