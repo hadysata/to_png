@@ -1,12 +1,12 @@
-Enhance your Flutter asset handling with `to_png`! This package leverages the new Flutter feature, [asset transformation](https://docs.flutter.dev/ui/assets/asset-transformation), to convert vector formats into PNG format. Designed to provide developers with more control and accuracy in rendering assets, `to_png` ensures your visuals look sharp and professional across all devices! 🚀🖼️
+Enhance your Flutter asset handling with `to_png`! This package leverages the new Flutter feature, [asset transformation](https://docs.flutter.dev/ui/assets/asset-transformation), to convert vector formats into PNG format. Designed to provide developers with more control and accuracy in rendering assets, `to_png` ensures your visuals look sharp and consistent across all devices! 🚀🖼️
 
 ## Why `to_png`?
 
-- **Reliability**: Direct vector formats(SVG/PDF) rendering can lead to inconsistencies. `to_png` ensures what you design is what you display.
+- **Reliability**: Direct vector (SVG/PDF) rendering can lead to inconsistencies. `to_png` ensures what you design is what you display.
 - **Ease of Use**: Simple setup and configuration directly within your `pubspec.yaml`.
 
 ## Installation
-Add `to_png` to your dev_dependencies in `pubspec.yaml` file:
+Add `to_png` to your dev_dependencies inside `pubspec.yaml` file:
 ```yaml
 dev_dependencies:
   to_png: latest_version
@@ -38,7 +38,7 @@ A: The scale depends on your needs. The default is `1`, but you can increase it 
     - path: assets/logo.svg
       transformers:
         - package: to_png
-          args: '--scale=3'
+          args: ['--scale=3']
 ```
 
 **Q: How do I install svgexport?**  

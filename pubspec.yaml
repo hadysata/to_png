@@ -1,11 +1,11 @@
 name: to_png
-description: Transform your Flutter assets seamlessly with to_png, a powerful package that converts SVG and PDF files into high-quality PNG images. Built on Flutter's new asset transformation feature, it ensures accuracy and ease of integration for developers looking to enhance their app's visuals.
-version: 0.0.1-pre.2
+description: Transform your Flutter assets seamlessly with to_png, a powerful package that converts SVG and PDF files into high-quality PNG images.
+version: 0.0.1-pre.3
 repository: https://github.com/hadysata/to_png/
 homepage: https://github.com/hadysata/to_png/
 
 environment:
-  sdk: ^3.4.0-0
+  sdk: ^3.3.4
 
 dependencies:
   args: ^2.4.2

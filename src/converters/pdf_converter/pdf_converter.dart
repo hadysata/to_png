@@ -1,5 +1,6 @@
 import 'dart:ffi';
 import 'dart:io';
+import 'dart:isolate';
 
 import 'package:ffi/ffi.dart';
 import 'package:image/image.dart';
@@ -7,9 +8,8 @@ import 'package:path/path.dart' as path;
 import 'package:pdfium_bindings/pdfium_bindings.dart';
 
 class PdfConverter {
-  static void convert(
-      {required String inputFilePath, required String outputFilePath, required int scale}) async {
-    final dylib = DynamicLibrary.open(libraryPath);
+  static void convert({required String inputFilePath, required String outputFilePath, required int scale}) async {
+    final dylib = DynamicLibrary.open(await libraryPath);
     final pdfium = PDFiumBindings(dylib);
 
     const allocate = calloc;
@@ -73,8 +73,16 @@ class PdfConverter {
     allocate.free(config);
   }
 
-  static String get libraryPath {
-    final basePath = path.join(Directory.current.path, "libs", "pdfium");
+static Future<String> get libraryPath async {
+    // Resolve the URI to the package's lib directory
+    var packageUri = await Isolate.resolvePackageUri(
+      Uri.parse('package:to_png/pdfium/'));
+    
+    if (packageUri == null) {
+      throw Exception('Failed to resolve package directory');
+    }
+
+    final basePath = packageUri.toFilePath();
 
     if (Platform.isWindows) {
       return path.join(basePath, 'pdfium.dll.lib');
